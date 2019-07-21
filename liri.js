@@ -25,7 +25,25 @@ switch (search) {
 
 // bands function
 let concertThis = function() {
+    let URL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
+    axios.get(URL).then(function(response){
+        // console.log(response.data);
+        let results = response.data;
+        if (results.length) {
+            console.log("Results are not found" + artist);
+            return;
+        }
+        console.log("Incoming concerts for " + artist);
+        for (let i = 0; i <results.length; i++) {
+            let concert = results[i];
+            console.log( concert.venue.city + "," +
+                (concert.venue.region || show.venue.country) +
+                " at " + concert.venue.name + " " +
+                moment(concert.datetime).format("MM/DD/YYYY")
+            );    
+        }
+    })
 }    
 
 
@@ -52,7 +70,6 @@ let SpotifyThisSong = function() {
                 console.log("-----------------------------------");
 
             }
-
         }
     );
 };
