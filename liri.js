@@ -54,7 +54,7 @@ function command (operator) {
                         break;
         case "movie-this":
             if (!input) {
-                input = "mr nobody"
+                input = "gladiator"
             }
             console.log("Searching for: " + input);
             axios.get("http://www.omdbapi.com/?apikey=trilogy&t=" + input).then(response => {
@@ -77,7 +77,7 @@ function command (operator) {
         case "do-what-it-says":
             break;
         default:
-            console.log('That is not a valid command. Please use "concet-this", "movie-this," or "spotify-this".')
+            console.log('That is not a valid command. Please use "concet-this", "movie-this," or "spotify-this-song".')
     }
 }
 
