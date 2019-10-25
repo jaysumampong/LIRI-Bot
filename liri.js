@@ -77,7 +77,7 @@ function command (operator) {
         case "do-what-it-says":
             break;
         default:
-            console.log('That is not a valid command. Please use "spotify-this-song," "movie-this," or "concert-this".')
+            console.log('That is not a valid command. Please use "concet-this", "movie-this," or "spotify-this".')
     }
 }
 
